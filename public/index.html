@@ -29,6 +29,41 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <script type="text/javascript">
+      {
+        ;(function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt =
+              'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth
+              if (!clientWidth) return
+              if (clientWidth >= 640) {
+                window.remSize = 80
+                docEl.style.fontSize = '80px'
+              } else {
+                window.remSize = 100 * (clientWidth / 750)
+                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px'
+                var div = document.createElement('div')
+                div.style.width = '1.4rem'
+                div.style.height = '0'
+                document.body.appendChild(div)
+                var ideal = (140 * clientWidth) / 750
+                var rmd = div.clientWidth / ideal
+                if (rmd > 1.2 || rmd < 0.8) {
+                  window.remSize = (100 * (clientWidth / 750)) / rmd
+                  docEl.style.fontSize =
+                    (100 * (clientWidth / 750)) / rmd + 'px'
+                }
+                document.body.removeChild(div)
+              }
+            }
+          if (!doc.addEventListener) return
+          win.addEventListener(resizeEvt, recalc, false)
+          doc.addEventListener('DOMContentLoaded', recalc, false)
+        })(document, window)
+      }
+    </script> -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
